@@ -80,6 +80,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         @BindView(R.id.tvRetweet) public TextView tvRetweet;
         @BindView(R.id.tvFavorite) public TextView tvFavorite;
 
+
         public ViewHolder(View itemView) {
             super(itemView);
             // findViewById lookups

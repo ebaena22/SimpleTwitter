@@ -10,7 +10,6 @@
         android:id="@+id/ivProfileImage"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintEnd_toStartOf="@id/tvUserName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:color/black" />
@@ -60,5 +59,55 @@
         app:layout_constraintStart_toEndOf="@+id/tvUserName"
         app:layout_constraintTop_toTopOf="@+id/ivProfileImage"
         app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/ivRetweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="8dp"
+        android:tint="@color/medium_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivProfileImage"
+        app:layout_constraintTop_toBottomOf="@+id/tvBody"
+        app:srcCompat="@drawable/ic_vector_retweet" />
+
+    <TextView
+        android:id="@+id/tvRetweet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivRetweet"
+        app:layout_constraintTop_toBottomOf="@+id/tvBody" />
+
+    <ImageView
+        android:id="@+id/ivFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="284dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:tint="@color/medium_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvFavorite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBody"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_vector_heart" />
+
+    <TextView
+        android:id="@+id/tvFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ivFavorite"
+        app:layout_constraintTop_toBottomOf="@+id/tvBody"
+        app:layout_constraintVertical_bias="0.6" />
 
 </android.support.constraint.ConstraintLayout>

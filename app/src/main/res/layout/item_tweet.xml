@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:text="TextView"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/tvBody"
         app:layout_constraintEnd_toStartOf="@id/tvHandle"
         app:layout_constraintStart_toEndOf="@+id/ivProfileImage"

@@ -21,6 +21,8 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import cz.msebera.android.httpclient.Header;
 
 public class TimelineActivity extends AppCompatActivity {
@@ -32,7 +34,8 @@ public class TimelineActivity extends AppCompatActivity {
     private TwitterClient client;
     private TweetAdapter tweetAdapter;
     ArrayList<Tweet> tweets;
-    RecyclerView rvTweets;
+    //RecyclerView rvTweets;
+    @BindView(R.id.rvTweet) RecyclerView rvTweets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,7 @@ public class TimelineActivity extends AppCompatActivity {
         client = TwitterApp.getRestClient(this);
 
         // find RecyclerView
-        rvTweets = (RecyclerView) findViewById(R.id.rvTweet);
+        ButterKnife.bind(this);
         // init the arraylist (data source)
         tweets = new ArrayList<>();
         // construct the adapter from this data source

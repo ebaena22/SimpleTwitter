@@ -18,6 +18,9 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
 
     private List<Tweet> mTweets;
@@ -63,23 +66,16 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
     // bind values based on position of element
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public ImageView ivProfileImage;
-        public TextView tvUsername;
-        public TextView tvBody;
-        public TextView tvTimestamp;
-        public TextView tvHandle;
+        @BindView(R.id.ivProfileImage) public ImageView ivProfileImage;
+        @BindView(R.id.tvUserName) public TextView tvUsername;
+        @BindView(R.id.tvBody) public TextView tvBody;
+        @BindView(R.id.tvTimestamp) public TextView tvTimestamp;
+        @BindView(R.id.tvHandle) public TextView tvHandle;
 
         public ViewHolder(View itemView) {
             super(itemView);
-
             // findViewById lookups
-
-            ivProfileImage = (ImageView) itemView.findViewById(R.id.ivProfileImage);
-            tvUsername = (TextView) itemView.findViewById(R.id.tvUserName);
-            tvBody = (TextView) itemView.findViewById(R.id.tvBody);
-            tvTimestamp = (TextView) itemView.findViewById(R.id.tvTimestamp);
-            tvHandle = (TextView) itemView.findViewById(R.id.tvHandle);
-
+            ButterKnife.bind(this, itemView);
         }
 
     }

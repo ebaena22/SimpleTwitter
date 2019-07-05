@@ -54,6 +54,8 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         viewHolder.tvBody.setText(tweet.body);
         viewHolder.tvTimestamp.setText(getRelativeTimeAgo(tweet.createdAt));
         viewHolder.tvHandle.setText("@" + tweet.user.screenName);
+        viewHolder.tvRetweet.setText(Integer.toString(tweet.retweetCount));
+        viewHolder.tvFavorite.setText(Integer.toString(tweet.favoriteCount));
 
 
         Glide.with(context)
@@ -75,6 +77,8 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
         @BindView(R.id.tvBody) public TextView tvBody;
         @BindView(R.id.tvTimestamp) public TextView tvTimestamp;
         @BindView(R.id.tvHandle) public TextView tvHandle;
+        @BindView(R.id.tvRetweet) public TextView tvRetweet;
+        @BindView(R.id.tvFavorite) public TextView tvFavorite;
 
         public ViewHolder(View itemView) {
             super(itemView);

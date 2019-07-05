@@ -62,6 +62,7 @@ public class TweetAdapter extends RecyclerView.Adapter<TweetAdapter.ViewHolder>{
                 .load(tweet.user.profileImageUrl)
                 .into(viewHolder.ivProfileImage);
 
+
     }
 
     @Override

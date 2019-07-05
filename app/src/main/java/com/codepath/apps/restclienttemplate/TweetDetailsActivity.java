@@ -18,6 +18,7 @@ public class TweetDetailsActivity extends AppCompatActivity {
     TextView tvUsername;
     TextView tvHandle;
     TextView tvBody;
+    ImageView ivImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class TweetDetailsActivity extends AppCompatActivity {
         tvUsername = (TextView) findViewById(R.id.tvUsername);
         tvHandle = (TextView) findViewById(R.id.tvHandle);
         tvBody = (TextView) findViewById(R.id.tvBody);
+        ivImage = (ImageView) findViewById(R.id.ivImage);
         // unwrap the tweet passed in via intent, using its simple name as a key
         tweet = (Tweet) Parcels.unwrap(getIntent().getParcelableExtra(Tweet.class.getSimpleName()));
 
@@ -38,5 +40,11 @@ public class TweetDetailsActivity extends AppCompatActivity {
         Glide.with(this)
                 .load(tweet.user.profileImageUrl)
                 .into(ivProfileImage);
+
+        if (tweet.imageUrl != null) {
+            Glide.with(this)
+                    .load(tweet.imageUrl)
+                    .into(ivImage);
+        }
     }
 }

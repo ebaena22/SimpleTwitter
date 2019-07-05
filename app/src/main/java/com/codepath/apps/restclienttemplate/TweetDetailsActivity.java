@@ -43,7 +43,7 @@ public class TweetDetailsActivity extends AppCompatActivity {
 
         if (tweet.imageUrl != null) {
             Glide.with(this)
-                    .load(tweet.imageUrl)
+                    .load(tweet.imageUrl + ":large")
                     .into(ivImage);
         }
     }

@@ -41,7 +41,7 @@ public class Tweet {
             if (media.length() != 0) {
                 JSONObject firstImage = media.getJSONObject(0);
                 String base_url = firstImage.getString("media_url_https");
-                tweet.imageUrl = base_url + ":medium";
+                tweet.imageUrl = base_url;
             }
         }
 

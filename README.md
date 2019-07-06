@@ -2,7 +2,7 @@
 
 **SimpleTweet** is an android app that allows a user to view his Twitter timeline and post a new tweet. The app utilizes [Twitter REST API](https://dev.twitter.com/rest/public).
 
-Time spent: **32** hours spent in total
+Time spent: **34** hours spent in total
 
 ## User Stories
 
@@ -24,8 +24,8 @@ The following **stretch** features are implemented:
 * [X] User can **pull down to refresh tweets timeline**
 * [X] User is using **"Twitter branded" colors and styles**
 * [ ] User sees an **indeterminate progress indicator** when any background or network task is happening
-* [ ] User can **select "reply" from detail view to respond to a tweet**
-  * [ ] User that wrote the original tweet is **automatically "@" replied in compose**
+* [X] User can **select "reply" from detail view to respond to a tweet**
+  * [X] User that wrote the original tweet is **automatically "@" replied in compose**
 * [X] User can tap a tweet to **open a detailed tweet view**
   * [ ] User can **take favorite (and unfavorite) or reweet** actions on a tweet
 * [X] User can **see embedded image media within a tweet** on list or detail view.

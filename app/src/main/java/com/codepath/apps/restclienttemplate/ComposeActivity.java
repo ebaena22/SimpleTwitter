@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -28,6 +29,11 @@ public class ComposeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compose);
         EditText editTextTweet = (EditText) findViewById(R.id.et_simple);
+        String replyUsername = (String) getIntent().getStringExtra("reply_username");
+        if (replyUsername != null) {
+            editTextTweet.setText("@" + replyUsername + " ");
+            Log.e("test", "Success");
+        }
         final TextView tvCharCount = (TextView) findViewById(R.id.tvCharCount);
         tvCharCount.setText("280");
         final TextWatcher txwatcher = new TextWatcher() {

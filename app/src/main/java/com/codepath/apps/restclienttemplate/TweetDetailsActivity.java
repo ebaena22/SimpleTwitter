@@ -1,7 +1,10 @@
 package com.codepath.apps.restclienttemplate;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +22,10 @@ public class TweetDetailsActivity extends AppCompatActivity {
     TextView tvHandle;
     TextView tvBody;
     ImageView ivImage;
+
+    private final int REQUEST_CODE = 20;
+    TimelineActivity timelineActivity = new TimelineActivity();
+    TweetAdapter adapter = new TweetAdapter(timelineActivity.tweets);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +52,19 @@ public class TweetDetailsActivity extends AppCompatActivity {
             Glide.with(this)
                     .load(tweet.imageUrl + ":large")
                     .into(ivImage);
+        }
+    }
+
+    public void onReply(View view) {
+        Intent intent = new Intent(TweetDetailsActivity.this, ComposeActivity.class);
+        intent.putExtra("reply_username", tweet.user.screenName);
+        startActivityForResult(intent, REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
+            Tweet newTweet = (Tweet) Parcels.unwrap(data.getParcelableExtra("tweet"));
         }
     }
 }

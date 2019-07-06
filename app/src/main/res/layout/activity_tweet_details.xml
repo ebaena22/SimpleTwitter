@@ -50,4 +50,12 @@
         android:layout_below="@id/tvBody"
         android:layout_centerHorizontal="true"
         app:srcCompat="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/ivReply"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:onClick="onReply"
+        android:layout_below="@id/ivImage"
+        app:srcCompat="@drawable/ic_reply" />
 </RelativeLayout>

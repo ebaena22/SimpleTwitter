@@ -25,7 +25,6 @@ public class TweetDetailsActivity extends AppCompatActivity {
 
     private final int REQUEST_CODE = 20;
     TimelineActivity timelineActivity = new TimelineActivity();
-    TweetAdapter adapter = new TweetAdapter(timelineActivity.tweets);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
